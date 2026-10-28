@@ -23,7 +23,7 @@ parameters {
 
 transformed parameters {
   vector[N] Xb;
-  Xb = intercept + coef * (X*w) + Z_matr * delta;
+  Xb = intercept + coef * (X_matr*w) + Z_matr * delta;
 }
 
 model {
@@ -62,8 +62,8 @@ parameters {
 }
 
 transformed parameters {
-  vector[N] Xb;
-  Xb = intercept + coef * (X*w);
+  vector[N] X_matrb;
+  Xb = intercept + coef * (X_matr*w);
 }
 
 model {
@@ -107,7 +107,7 @@ parameters {
 
 transformed parameters {
   vector[N] Xb;
-  Xb = intercept + coef * (X*w) + Z_matr * delta;
+  Xb = intercept + coef * (X_matr*w) + Z_matr * delta;
 }
 
 model {
@@ -144,7 +144,7 @@ parameters {
 
 transformed parameters {
   vector[N] Xb;
-  Xb = intercept + coef * (X*w);
+  Xb = intercept + coef * (X_matr*w);
 }
 
 model {
@@ -187,7 +187,7 @@ parameters {
 
 transformed parameters {
   vector[N] mu;
-  mu = exp(intercept + coef * (X*w) + Z_matr * delta);
+  mu = exp(intercept + coef * (X_matr*w) + Z_matr * delta);
 }
 
 model {
@@ -225,7 +225,7 @@ parameters {
 
 transformed parameters {
   vector[N] mu;
-  mu = exp(intercept + coef * (X*w));
+  mu = exp(intercept + coef * (X_matr*w));
 }
 
 model {
