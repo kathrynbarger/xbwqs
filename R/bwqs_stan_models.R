@@ -37,7 +37,7 @@ model {
   y ~ normal(Xb, sig);
 }
 generated quantities{
-  # calculate likelihood
+  // calculate likelihood
   vector[N] log_lik;
   for(n in 1:N){
     log_lik[n] = normal_lpdf(y[n] | Xb[n], sig);
@@ -76,7 +76,7 @@ model {
   y ~ normal(Xb, sig);
 }
 generated quantities{
-  # calculate likelihood
+  // calculate likelihood
   vector[N] log_lik;
   for(n in 1:N){
     log_lik[n] = normal_lpdf(y[n] | Xb[n], sig);
@@ -120,7 +120,7 @@ model {
   y ~ bernoulli_logit(Xb);
 }
 generated quantities{
-  # calculate likelihood
+  // calculate likelihood
   vector[N] log_lik;
   for(n in 1:N){
     log_lik[n] = bernoulli_logit_lpmf(y[n]| Xb[n]);
@@ -156,7 +156,7 @@ model {
   y ~ bernoulli_logit(Xb);
 }
 generated quantities{
-  # calculate likelihood
+  // calculate likelihood
   vector[N] log_lik;
   for(n in 1:N){
     log_lik[n] = bernoulli_logit_lpmf(y[n]| Xb[n]);
@@ -201,7 +201,7 @@ model {
 
 }
 generated quantities{
-  # calculate likelihood
+  // calculate likelihood
   vector[N] log_lik;
   for(n in 1:N){
     log_lik[n] = poisson_lpmf(y[n]| mu[n]);
@@ -238,7 +238,7 @@ model {
 
 }
 generated quantities{
-  # calculate likelihood
+  // calculate likelihood
   vector[N] log_lik;
   for(n in 1:N){
     log_lik[n] = poisson_lpmf(y[n]| mu[n]);
