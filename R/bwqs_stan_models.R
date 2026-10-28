@@ -8,7 +8,7 @@ data {
   int<lower=1> M;       // number of other covariates
   matrix[N, K] X_matr;  // exposure matrix
   matrix[N, M] Z_matr;  // Other covariates matrix
-  real y[N];            // continuous outcome
+  array[N] real y;            // continuous outcome
 
 }
 
@@ -50,7 +50,7 @@ data {
   int<lower=1> N;       // total number of observations
   int<lower=2> K;       // number of elements in the exposure mixture
   matrix[N, K] X_matr;  // exposure matrix
-  real y[N];            // continuous outcome
+  array[N] real y;            // continuous outcome
 }
 
 parameters {
